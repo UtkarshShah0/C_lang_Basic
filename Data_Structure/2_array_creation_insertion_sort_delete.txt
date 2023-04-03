@@ -1,0 +1,63 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void main() {
+    int arr[20], i, pos, n, j, num, temp;
+    printf("How many elements: ");
+    scanf("%d", &n);
+    
+    //creation
+    
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+      
+    //display
+    // for(i=0; i<n; i++)
+    //     printf("%d ", arr[i]);
+    
+    //insertion
+    printf("\n Enter the position as index :");
+    scanf("%d", &pos);
+    
+    for(j=i; j>=pos; j--)
+        arr[j+1] = arr[j];
+    
+    printf("Enter new number: ");
+    scanf("%d", &num);
+    
+    arr[pos] = num;
+
+   //display
+    n = n+1; //index increases
+    for(i=0; i<n ; i++)
+        printf("%d ", arr[i]);
+     
+     
+        
+    //sorting
+    for(i=0; i<n; i++){
+        for(j=0; j<i; j++){
+            if(arr[i]<arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;}
+        }
+    }
+    
+    
+    //deletion
+    printf(" ");
+    printf("\n Enter the deletion index: ");
+    scanf("%d", &pos);
+    
+    n= n-1; //index decreases
+    for(j=pos; j<n; j++)
+        arr[j] = arr[j+1];
+        
+    //display
+    for(i=0; i<n; i++)
+         printf("%d ", arr[i]);
+    
+    
+
+}
